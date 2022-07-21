@@ -1,26 +1,40 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Navbar />
+    <Forms @add-data='addName'/>
+    <Card v-for="friend of friends" :key="friend" :data='friend'/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Navbar from './components/friend_menu.vue'
+import Forms from './components/friend_form.vue'
+import Card from './components/friend_card.vue'
 export default {
-  name: 'App',
   components: {
-    HelloWorld
+    Navbar,
+    Forms,
+    Card,
+  },
+
+    data() {
+      return {
+        friends: [
+          // {name: 'Ronan', description: 'The best', skills:['HTML','CSS', 'PHP']},
+          // {name: 'Rady', description: 'The best', skills:['HTML','CSS']},
+          // {name: 'Him', description: 'The best', skills:['HTML','CSS', 'JAVA']},
+      ]
+    }
+  },
+  methods: {
+    addName(firstname, lastname, comment, check) {
+      this.friends.push({FirstName: firstname, LastName: lastname, Comment: comment, CheckValue: check})
+    }
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style scoped>
+body {
+    padding: 0;
+    margin: 0;
 }
 </style>
