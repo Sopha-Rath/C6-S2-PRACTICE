@@ -13,22 +13,6 @@
         <div class="form-group">
             <input type="text" class="form-control" placeholder="Comment" v-model="comment" required>
         </div>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" value="HTML" v-model="checkvalue">
-            <label class="form-check-label" for="inlineCheckbox1">HTML</label>
-        </div>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" value="CSS" v-model="checkvalue"> 
-            <label class="form-check-label" for="inlineCheckbox2">CSS</label>
-        </div>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" value="OOP" v-model="checkvalue">
-            <label class="form-check-label" for="inlineCheckbox2">OOP</label>
-        </div>
-         <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" value="JAVA" v-model="checkvalue">
-            <label class="form-check-label" for="inlineCheckbox2">JAVA</label>
-        </div>
         <div class="form-group mt-4">
             <button type="submit" class="btn btn-primary">ADD</button>
         </div>
@@ -44,16 +28,14 @@
                 firstname: '',
                 lastname: '',
                 comment: '',
-                checkvalue: [],
             }
         },
         methods: {
             addItem() {
-               this.$emit('add-data', this.firstname, this.lastname, this.comment, this.checkvalue),
+               this.$emit('add-data', this.firstname, this.lastname, this.comment),
                this.firstname = '',
                this.lastname = '',
-               this.comment = '',
-               this.checkvalue = ''
+               this.comment = ''
             }
         }
     }

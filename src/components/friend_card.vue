@@ -1,14 +1,8 @@
 <template>
     <div class="app">
         <div class="card">
-            <h4>Full Name: {{data.FirstName}} {{data.LastName}}</h4>
+            <h5>Full Name: {{data.FirstName}} {{data.LastName}}</h5>
             <p>Description: {{data.Comment}}</p>
-            <div class="d-flex justify-content-start">
-                <P class="mt-1">SKILLS:</P>
-                <p v-for="check of data.CheckValue" :key="check">
-                    <button class="btn btn-danger text-white ml-2">{{check}}</button>
-                </p>
-            </div>
             <h3>{{data.name}}</h3>
             <p>{{data.description}}</p>
             <div class="btn d-flex justify-content-start">
